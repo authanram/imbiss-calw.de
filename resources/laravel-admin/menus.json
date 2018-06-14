@@ -1,7 +1,23 @@
 {
   "menus": [
     {
-      "section": "User Manager",
+      "section": "Menu",
+      "role": "editor",
+      "items": [
+        {
+          "title": "Categories",
+          "url": "\/menu-categories",
+          "role": "editor"
+        },
+        {
+          "title": "Menus",
+          "url": "\/menus",
+          "role": "editor"
+        }
+      ]
+    },
+    {
+      "section": "User, Roles & Permissions",
       "role": "admin",
       "items": [
         {
@@ -18,22 +34,6 @@
           "title": "Permissions",
           "url": "\/admin\/permissions",
           "role": "admin"
-        }
-      ]
-    },
-    {
-      "section": "Menus Management",
-      "role": "editor",
-      "items": [
-        {
-          "title": "Categories",
-          "url": "\/menu-categories",
-          "role": "editor"
-        },
-        {
-          "title": "Menus",
-          "url": "\/menus",
-          "role": "editor"
         }
       ]
     }

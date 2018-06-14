@@ -17,14 +17,14 @@
                 <br />
                 <div class="list-group menu">
                     @foreach($menuCategory->menus as $menu)
-                        <div class="list-group-item pb-2">
+                        <div class="list-group-item">
                             <div class="row">
                                 <div class="col-8">
                                     <h3 class="float-left mb-0 mr-3">{{ $menu->number }}</h3>
                                     <div class="float-left" style="margin-top:3px;">
                                         <div class="d-inline-block lead">{{ $menu->name }}</div>
                                         @if(!empty($menu->note))
-                                            <div class="text-muted">{{ $menu->note }}</div>
+                                            <div class="text-muted">{!! str_replace(', scharf', ', <span class="font-weight-bold text-primary">scharf</span>', $menu->note) !!}</div>
                                         @endif
                                     </div>
                                 </div>

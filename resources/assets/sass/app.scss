@@ -79,6 +79,10 @@ a.number:hover {
   &.active {
     background-color: $primary;
     color: white;
+
+    .text-muted {
+      color: #dadada !important;
+    }
   }
 }
 

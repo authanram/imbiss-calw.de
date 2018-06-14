@@ -22,21 +22,17 @@ Route::get('/haftungsausschluss', function () {
     return view('disclaimer');
 })->name('disclaimer');
 
-Route::get('/menu/{menu?}', function () {
-    $category = null;
+Route::get('/menu/{menu}', function ($menu) {
+    $categories = MenuCategory::all();
 
-    foreach(MenuCategory::all() as $menuCategory) {
-        if (urlencode(strtolower($menuCategory->name)) === request()->route()->parameter('menu')) {
-            $category = $menuCategory;
+    foreach($categories as $menuCategory) {
+        if (urlencode(strtolower($menuCategory->name)) === $menu) {
+            $categories = [$menuCategory];
         }
     }
 
-    if ($category === null) {
-        abort(404);
-    }
-
     return view('menu', [
-        'categories' => [$category],
+        'categories' => $categories,
     ]);
 })->name('menu.menu');
 

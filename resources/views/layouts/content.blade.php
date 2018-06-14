@@ -35,7 +35,7 @@
         <hr />
 
         <aside class="list-group">
-            <a href="/menu" class="list-group-item-action border-0">
+            <a href="/menu/alle" class="list-group-item-action border-0">
                 Alle Gerichte <small>u. Getränke</small>
             </a>
         </aside>

@@ -25,7 +25,7 @@
 
                 @foreach($categories as $category)
                     <a href="/menu/{{ urlencode(strtolower($category->name)) }}">
-                        <span class="d-inline-block p-4 border menu-tile">
+                        <span class="d-inline-block p-4 border menu-tile mb-2 mr-1">
                             <span class="font-weight-bold h5">{{ $category->name }}</span>
                             <br />
                             <small class="text-muted">

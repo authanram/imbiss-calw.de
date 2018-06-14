@@ -50,7 +50,9 @@
                 <div class="mt-4">
 
                     <span class="float-left mr-4">
-                        <img class="img-thumbnail mb-2" style="width:220px;" src="/images/head.png" />
+                        <a href="/" title="imbiss-calw.de">
+                            <img class="img-thumbnail mb-2" style="width:220px;" src="/images/head.png" />
+                        </a>
                     </span>
 
                     <span class="float-left">

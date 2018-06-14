@@ -42,14 +42,14 @@
                                 @foreach($menus as $item)
                                     <tr>
                                         <td>{{ $item->number }}</td>
-                                        <td>
+                                        <td style="width:37%;">
                                             {{ $item->name }}
 
                                             @if($item->note)
                                                 <div class="text-muted small">{{ $item->note }}</div>
                                             @endif
                                         </td>
-                                        <td>{{ number_format($item->price, 2) }}</td>
+                                        <td>{{ number_format($item->price, 2) }} &euro;</td>
                                         <td>{{ $item->menuCategory->name }}</td>
                                         <td>{{ $item->status === 1 ? 'Visible' : 'Hidden' }}</td>
                                         <td class="text-right">

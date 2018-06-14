@@ -28,8 +28,9 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-4 text-right lead">
-                                    {{ number_format($menu->price, 2) }} &euro;
+                                <div class="col-4 text-right">
+                                    <div class="lead">{{ str_replace('.', ',', number_format($menu->price, 2)) }} &euro;</div>
+                                    <span class="small" style="color:#bbb;">Inkl. 19% MwSt.</span>
                                 </div>
                             </div>
                         </div>

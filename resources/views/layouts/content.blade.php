@@ -13,21 +13,65 @@
 
 <div class="row m-0 h-100">
 
-    <div class="col-2 border-right">
+    <div class="col-1 border-right pt-3" style="min-width: 220px;">
+        <h3>Menü</h3>
+
         <aside class="list-group">
             @foreach($menuCategories as $category)
-                <a href="#" class="list-group-item list-group-item-action border-0">
-                    {{ $category->name }}
+                @if(request()->route()->parameter('menu') === urlencode(strtolower($category->name)))
+                    <a href="/menu/{{ urlencode(strtolower($category->name)) }}" class="list-group-item-action border-0 active">
+                @else
+                    <a href="/menu/{{ urlencode(strtolower($category->name)) }}" class="list-group-item-action border-0">
+                @endif
+                    <span class="d-block lead p-0 m-0" style="line-height:1.2rem;">{{ $category->name }}</span>
+                    <small class="text-muted">
+                        {{ count($category->menus) }}
+                        {{ $category->name === 'Getränke' ? 'Sorten' : 'Gerichte' }}
+                    </small>
                 </a>
             @endforeach
         </aside>
 
+        <hr />
+
+        <aside class="list-group">
+            <a href="/menu" class="list-group-item-action border-0">
+                Alle Gerichte <small>u. Getränke</small>
+            </a>
+        </aside>
+
     </div>
 
-    <div class="col-9">
+    <div class="col d-inline-block">
 
         <div id="app">
-            <div class="content d-block text-left">
+            <div class="content d-block text-left mt-3 pl-3">
+
+                <div class="mt-4">
+
+                    <span class="float-left mr-4">
+                        <img class="img-thumbnail mb-2" style="width:220px;" src="/images/head.png" />
+                    </span>
+
+                    <span class="float-left">
+                        <span class="text-muted">
+                            <span class="d-block mt-1">
+                                <a class="font-weight-bold display-5 pb-0 number" href="tel:07051934953">07051 / 934 953</a>
+                            </span>
+                            <span>Lange Steige 6, 75365 Calw</span>
+                            (<a href="https://goo.gl/maps/UiqyqCqvLXo" target="_blank">Anfahrt</a>)
+                            <br />
+                            <span class="lead">Montag - Sonntag</span> 11:00-14:30, 17:00-23:00 Uhr
+                            <br />
+                            <span class="lead">Samstag</span> 17:00 - 23:00 Uhr
+                        </span>
+                    </span>
+
+                    <div class="clearfix"></div>
+
+                    <hr class="mt-3 mb-4" />
+
+                </div>
 
                 @yield('content')
 

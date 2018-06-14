@@ -55,3 +55,34 @@ a.number:hover {
 .text-muted {
   color: #999 !important;
 }
+
+.menu-tile {
+  border-radius: 4px;
+
+  &:hover {
+    background-color: $primary;
+    color: white;
+
+    .text-muted {
+      color: #dadada !important;
+    }
+  }
+}
+
+.list-group-item-action {
+  margin-bottom: 2px;
+  border-radius: 4px;
+  padding: 8px 12px;
+  &:hover {
+    background-color: #dadada;
+  }
+  &.active {
+    background-color: $primary;
+    color: white;
+  }
+}
+
+.list-group.menu > .list-group-item:hover {
+  background-color: #efefef;
+  color: $primary;
+}

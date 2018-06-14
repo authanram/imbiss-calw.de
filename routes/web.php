@@ -1,9 +1,13 @@
 <?php
 
+use App\MenuCategory;
+
 //Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'categories' => MenuCategory::all(),
+    ]);
 })->name('welcome');
 
 Route::get('/impressum', function () {
@@ -17,6 +21,24 @@ Route::get('/datenschutzerklaerung', function () {
 Route::get('/haftungsausschluss', function () {
     return view('disclaimer');
 })->name('disclaimer');
+
+Route::get('/menu/{menu?}', function () {
+    $category = null;
+
+    foreach(MenuCategory::all() as $menuCategory) {
+        if (urlencode(strtolower($menuCategory->name)) === request()->route()->parameter('menu')) {
+            $category = $menuCategory;
+        }
+    }
+
+    if ($category === null) {
+        abort(404);
+    }
+
+    return view('menu', [
+        'categories' => [$category],
+    ]);
+})->name('menu.menu');
 
 Auth::routes();
 

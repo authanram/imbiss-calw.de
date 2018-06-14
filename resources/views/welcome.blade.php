@@ -16,30 +16,27 @@
             </div>
         @endif
 
-        <div class="m-b-md mt-2">
-            <span class="float-left mr-4">
-                <img class="img-thumbnail" style="width:220px;" src="/images/head.png" />
-            </span>
+        <div class="m-b-md pt-2 pb-2">
 
-            <span class="float-left">
-                <span class="text-muted">
-                    <span class="d-block mt-1 mb-1">
-                        <a class="font-weight-bold display-5 pb-0 number" href="tel:07051934953">07051 / 934 953</a>
-                    </span>
-                    <span>Lange Steige 6, 75365 Calw</span>
-                    (<a href="https://goo.gl/maps/UiqyqCqvLXo" target="_blank">Anfahrt</a>)
-                    <br />
-                    <span class="lead">Montag - Sonntag</span> 11:00-14:30, 17:00-23:00 Uhr
-                    <br />
-                    <span class="lead">Samstag</span> 17:00 - 23:00 Uhr
-                </span>
-            </span>
+            <h3>Unsere wunderbaren Menüs</h3>
+            Schnell, Preiswert, gut und immer frisch zubereitet.
 
-            <div class="clearfix"></div>
+            <div class="pt-3">
 
-            <hr class="mt-4 mb-4" />
+                @foreach($categories as $category)
+                    <a href="/menu/{{ urlencode(strtolower($category->name)) }}">
+                        <span class="d-inline-block p-4 border menu-tile">
+                            <span class="font-weight-bold h5">{{ $category->name }}</span>
+                            <br />
+                            <small class="text-muted">
+                                {{ count($category->menus) }}
+                                {{ $category->name === 'Getränke' ? 'Sorten' : 'Gerichte' }}
+                            </small>
+                        </span>
+                    </a>
+                @endforeach
 
-            ...
+            </div>
 
         </div>
     </div>

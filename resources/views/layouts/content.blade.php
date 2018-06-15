@@ -13,8 +13,8 @@
 
 <div class="row m-0">
 
-    <div class="border-right d-none d-md-inline col-1">
-        <div class="pt-3" style="min-width: 220px;">
+    <div class="border-right d-none d-md-inline">
+        <div class="pt-3 col-1" style="min-width: 220px;">
             <div class="position-fixed">
                 <h3>Menü</h3>
 

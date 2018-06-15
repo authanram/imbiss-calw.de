@@ -20,9 +20,5 @@
     E-Mail: <a href="phandinh@t-online.de">phandinh@t-online.de</a>
     <br />
     <br />
-    Umsatzsteuer-ID: <i class="text-muted">- folgt in Kürze -</i>
-    <br />
-    Umsatzsteuer-Identifikationsnummer gem. § 27 a Umsatzsteuergesetz: <i class="text-muted">- folgt in Kürze -</i>
-    <br />
-    HRB: <i class="text-muted">- folgt in Kürze -</i>
+    Umsatzsteuer-ID: <i class="text-muted">45236|46466</i>
 @endsection

@@ -12,7 +12,7 @@
         <br>D-31134 Hildesheim Neustadt
         <br>
         <br>Telefon: 0175 4156554 (Täglich 09:00-20:30)
-        <br>E-Mail: <a href="mailto:service@fernschmecker.de">service@fernschmecker.de</a></p>
+        <br>E-Mail: <a href="mailto:service@imbiss-calw.de">service@imbiss-calw.de</a></p>
     <br />
     <h2>Ihre Betroffenenrechte</h2>
     <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte ausüben:</p>

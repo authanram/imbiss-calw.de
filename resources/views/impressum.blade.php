@@ -5,7 +5,7 @@
     <h4>Angaben gem. § 5 TMG:</h4>
     <br />
 
-    <strong>Vorname, Nachname</strong>
+    <strong>Nguyyn Trieu Thuy</strong>
     <br />
     Lange Steige 6
     <br />
@@ -17,7 +17,7 @@
     <h4>Kontaktaufnahme:</h4>
     Telefon: 07051 / 934 953
     <br />
-    E-Mail: <a href="mailto:service@imbiss-calw.de">service@imbiss-calw.de</a>
+    E-Mail: <a href="phandinh@t-online.de">phandinh@t-online.de</a>
     <br />
     <br />
     Umsatzsteuer-ID: <i class="text-muted">- folgt in Kürze -</i>

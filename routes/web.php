@@ -22,12 +22,6 @@ Route::get('/haftungsausschluss', function () {
     return view('disclaimer');
 })->name('disclaimer');
 
-Route::get('/menu', function () {
-    return view('menu', [
-        'categories' => MenuCategory::all(),
-    ]);
-})->name('menu.menu');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')

@@ -7,11 +7,12 @@
 
     <h1>Datenschutzerklärung</h1>
     <p>Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesonderae der EU-Datenschutzgrundverordnung (DSGVO), ist:</p>
-    <p>Anika, Arnold
-        <br>Keßlerstraße 88
-        <br>D-31134 Hildesheim Neustadt
+    <p>
+        <strong>Vorname, Nachname</strong>
+        <br>Lange Steige 6
+        <br>D-75365 Calw
         <br>
-        <br>Telefon: 0175 4156554 (Täglich 09:00-20:30)
+        <br>Telefon: 07051 / 934 953
         <br>E-Mail: <a href="mailto:service@imbiss-calw.de">service@imbiss-calw.de</a></p>
     <br />
     <h2>Ihre Betroffenenrechte</h2>

@@ -94,8 +94,6 @@
                     Telefonische Bestellung: <a class="mr-2 number font-weight-bold lead" href="tel:01754156554">07051 / 934 953</a>
                     <br />
                     <a href="/">www.imbiss-calw.de</a>
-                    <br />
-                    <span class="d-inline-block small">(Inh. ...)</span>
                 </div>
 
                 <hr />

@@ -1,10 +1,6 @@
 @extends('layouts.content')
 
 @section('content')
-    <a href="/" class="btn btn-light">< Zur Startseite</a>
-    <br />
-    <br />
-
     <h1>Haftungsausschluss</h1>
     <br />
 

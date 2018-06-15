@@ -1,10 +1,6 @@
 @extends('layouts.content')
 
 @section('content')
-    <a href="/" class="btn btn-light">< Zur Startseite</a>
-    <br />
-    <br />
-
     <h1>Datenschutzerklärung</h1>
     <p>Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesonderae der EU-Datenschutzgrundverordnung (DSGVO), ist:</p>
     <p>

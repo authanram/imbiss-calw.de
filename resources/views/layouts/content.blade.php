@@ -117,7 +117,7 @@
                 </div>
             </div>
 
-            <back-to-top bottom="80px" right="80px">
+            <back-to-top bottom="80px" right="30px">
                 <button type="button" class="btn btn-primary btn-to-top">Nach oben</button>
             </back-to-top>
         </div>

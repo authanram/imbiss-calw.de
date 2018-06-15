@@ -5,7 +5,7 @@ use App\MenuCategory;
 //Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome', [
+    return view('menu', [
         'categories' => MenuCategory::all(),
     ]);
 })->name('welcome');

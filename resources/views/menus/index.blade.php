@@ -43,7 +43,7 @@
                                     <tr>
                                         <td>{{ $item->number }}</td>
                                         <td style="width:37%;">
-                                            {{ $item->name }}
+                                            <span class="font-weight-bold">{{ $item->name }}</span>
 
                                             @if($item->note)
                                                 <div class="text-muted small">{{ $item->note }}</div>
@@ -51,7 +51,9 @@
                                         </td>
                                         <td>{{ number_format($item->price, 2) }} &euro;</td>
                                         <td>{{ $item->menuCategory->name }}</td>
-                                        <td>{{ $item->status === 1 ? 'Visible' : 'Hidden' }}</td>
+                                        <td class="font-weight-bold {{ $item->status === 1 ? 'text-success' : 'text-danger' }}">
+                                            {{ $item->status === 1 ? 'Visible' : 'Hidden' }}
+                                        </td>
                                         <td class="text-right">
                                             {{--<a href="{{ url('/menus/' . $item->id) }}" title="View Menu"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>--}}
                                             <a href="{{ url('/menus/' . $item->id . '/edit') }}" title="Edit Menu"><button class="btn btn-secondary btn-sm">Edit</button></a>

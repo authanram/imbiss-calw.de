@@ -13,33 +13,28 @@
 
 <div class="row m-0 h-100">
 
-    <div class="col-1 border-right pt-3" style="min-width: 220px;">
-        <h3>Menü</h3>
+    <div class="d-none d-md-inline col-1 border-right pt-3" style="min-width: 220px;">
+        <div class="position-fixed">
+            <h3>Menü</h3>
 
-        <aside class="list-group">
-            @foreach($menuCategories as $category)
-                @if(request()->route()->parameter('menu') === urlencode(strtolower($category->name)))
-                    <a href="/menu/{{ urlencode(strtolower($category->name)) }}" class="list-group-item-action border-0 active">
-                @else
-                    <a href="/menu/{{ urlencode(strtolower($category->name)) }}" class="list-group-item-action border-0">
-                @endif
-                    <span class="d-block lead p-0 m-0" style="line-height:1.2rem;">{{ $category->name }}</span>
-                    <small class="text-muted">
-                        {{ count($category->menus) }}
-                        {{ $category->name === 'Getränke' ? 'Sorten' : 'Gerichte' }}
-                    </small>
-                </a>
-            @endforeach
-        </aside>
-
-        <hr />
-
-        <aside class="list-group">
-            <a href="/menu/alle" class="list-group-item-action border-0">
-                Alle Gerichte <small>u. Getränke</small>
-            </a>
-        </aside>
-
+            <aside class="list-group">
+                @foreach($menuCategories as $category)
+                    @if($category->status)
+                        @if(request()->route()->parameter('menu') === urlencode(strtolower($category->name)))
+                            <a href="/menu#{{ urlencode(strtolower(htmlentities($category->name))) }}" class="list-group-item-action border-0 active">
+                        @else
+                            <a href="/menu#{{ urlencode(strtolower(htmlentities($category->name))) }}" class="list-group-item-action border-0">
+                        @endif
+                            <span class="d-block lead p-0 m-0" style="line-height:1.2rem;">{{ $category->name }}</span>
+                            <small class="text-muted">
+                                {{ count($category->menus) }}
+                                {{ $category->name === 'Getränke' ? 'Sorten' : 'Gerichte' }}
+                            </small>
+                        </a>
+                    @endif
+                @endforeach
+            </aside>
+        </div>
     </div>
 
     <div class="col d-inline-block">

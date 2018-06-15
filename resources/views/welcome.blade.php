@@ -24,16 +24,18 @@
             <div class="pt-3">
 
                 @foreach($categories as $category)
-                    <a href="/menu/{{ urlencode(strtolower($category->name)) }}">
-                        <span class="d-inline-block p-4 border menu-tile mb-2 mr-1">
-                            <span class="font-weight-bold h5">{{ $category->name }}</span>
-                            <br />
-                            <small class="text-muted">
-                                {{ count($category->menus) }}
-                                {{ $category->name === 'Getränke' ? 'Sorten' : 'Gerichte' }}
-                            </small>
-                        </span>
-                    </a>
+                    @if($category->status)
+                        <a href="/menu#{{ urlencode(strtolower($category->name)) }}">
+                            <span class="d-inline-block p-4 border menu-tile mb-2 mr-1">
+                                <span class="font-weight-bold h5">{{ $category->name }}</span>
+                                <br />
+                                <small class="text-muted">
+                                    {{ count($category->menus) }}
+                                    {{ $category->name === 'Getränke' ? 'Sorten' : 'Gerichte' }}
+                                </small>
+                            </span>
+                        </a>
+                    @endif
                 @endforeach
 
             </div>

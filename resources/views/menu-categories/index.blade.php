@@ -32,8 +32,8 @@
                                     <tr>
                                         <th>Order</th>
                                         <th>Name</th>
-                                        <th>Status</th>
                                         <th>Menus</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -41,9 +41,11 @@
                                 @foreach($menucategories as $item)
                                     <tr>
                                         <td>{{ $item->order }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->status === 1 ? 'Visible' : 'Hidden' }}</td>
+                                        <td class="font-weight-bold">{{ $item->name }}</td>
                                         <td>{{ count($item->menus) }}</td>
+                                        <td class="font-weight-bold {{ $item->status === 1 ? 'text-success' : 'text-danger' }}">
+                                            {{ $item->status === 1 ? 'Visible' : 'Hidden' }}
+                                        </td>
                                         <td class="text-right">
                                             <a href="{{ url('/menu-categories/' . $item->id . '/edit') }}" title="Edit MenuCategory"><button class="btn btn-secondary btn-sm">Edit</button></a>
 

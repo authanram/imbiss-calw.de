@@ -22,17 +22,9 @@ Route::get('/haftungsausschluss', function () {
     return view('disclaimer');
 })->name('disclaimer');
 
-Route::get('/menu/{menu}', function ($menu) {
-    $categories = MenuCategory::all();
-
-    foreach($categories as $menuCategory) {
-        if (urlencode(strtolower($menuCategory->name)) === $menu) {
-            $categories = [$menuCategory];
-        }
-    }
-
+Route::get('/menu', function () {
     return view('menu', [
-        'categories' => $categories,
+        'categories' => MenuCategory::all(),
     ]);
 })->name('menu.menu');
 

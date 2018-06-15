@@ -14,7 +14,6 @@
 }
 
 html, body {
-  height: 100%;
   background-color: #fff;
   color: #636b6f;
   font-family: 'Raleway', sans-serif;
@@ -73,24 +72,12 @@ a.number:hover {
   }
 }
 
-.list-group-item-action {
-  margin-bottom: 2px;
-  border-radius: 4px;
-  padding: 8px 12px;
-  &:hover {
-    background-color: #dadada;
-  }
-  &.active {
-    background-color: $primary;
-    color: white;
-
-    .text-muted {
-      color: #dadada !important;
-    }
-  }
-}
 
 .list-group.menu > .list-group-item:hover {
   background-color: #efefef;
   color: $primary;
+}
+
+.btn-to-top {
+  font-size: 22px;
 }

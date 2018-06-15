@@ -11,14 +11,14 @@
 </head>
 <body >
 
-<div class="row m-0 d-flex align-items-stretch">
+<div class="row m-0">
 
     <div class="border-right d-none d-md-inline col-1">
         <div class="pt-3" style="min-width: 220px;">
             <div class="position-fixed">
                 <h3>Menü</h3>
 
-                <aside class="list-group">
+                <div class="list-group">
                     @foreach($menuCategories as $category)
                         @if($category->status)
                             @if(request()->route()->parameter('menu') === urlencode(strtolower($category->name)))
@@ -34,10 +34,10 @@
                             </a>
                         @endif
                     @endforeach
-                </aside>
+                </div>
 
                 <hr />
-                <aside>
+                <div>
                     <span class="font-weight-bold">Telefonische Bestellung:</span>
                     <br />
                     <a class="number text-primary font-weight-bold lead" href="tel:01754156554">07051 / 934 953</a>
@@ -48,7 +48,7 @@
                         <br />
                         (<a href="https://goo.gl/maps/UiqyqCqvLXo" target="_blank">Anfahrt</a>)
                     </div>
-                </aside>
+                </div>
             </div>
         </div>
     </div>
@@ -116,6 +116,10 @@
                     @endguest
                 </div>
             </div>
+
+            <back-to-top bottom="80px" right="80px">
+                <button type="button" class="btn btn-primary btn-to-top">Nach oben</button>
+            </back-to-top>
         </div>
 
     </div>

@@ -7,9 +7,9 @@
 require('./bootstrap');
 
 import Vue from 'vue';
-import VueSweetalert2 from 'vue-sweetalert2';
+import BackToTop from 'vue-backtotop';
 
-Vue.use(VueSweetalert2);
+Vue.use(BackToTop);
 window.Vue = Vue;
 
 /**
@@ -18,8 +18,9 @@ window.Vue = Vue;
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('gallery-image', require('./components/GalleryImage.vue'));
+//Vue.component('gallery-image', require('./components/GalleryImage.vue'));
 
 const app = new Vue({
     el: '#app'
 });
+

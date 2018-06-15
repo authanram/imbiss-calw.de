@@ -10,7 +10,7 @@
                     <div class="mb-4 pb-2">
                 @endif
                     <a name="{{ urlencode(strtolower(htmlentities($menuCategory->name))) }}"></a>
-                    <h3 class="mb-0">{{ $menuCategory->name }}</h3>
+                    <h3 class="mb-0 text-primary">{{ $menuCategory->name }}</h3>
                     <small class="text-muted">
                         {{ count($menuCategory->menus) }}
                         {{ $menuCategory->name === 'Getränke' ? 'Sorten' : 'Gerichte' }}

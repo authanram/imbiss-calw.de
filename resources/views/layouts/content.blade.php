@@ -37,11 +37,6 @@
                 </aside>
 
                 <hr />
-                <aside class="list-group">
-                    <a href="/" class="list-group-item-action border-0">Startseite</a>
-                </aside>
-
-                <hr />
                 <aside>
                     <span class="font-weight-bold">Telefonische Bestellung:</span>
                     <br />

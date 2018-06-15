@@ -14,7 +14,7 @@
 </div><div class="form-group {{ $errors->has('number') ? 'has-error' : ''}}">
     <label for="number" class="col-md-4 control-label">{{ 'Number' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="number" type="number" id="number" value="{{ $menu->number or ''}}" required>
+        <input class="form-control" type="number" name="number" type="number" id="number" value="{{ $menu->number or ''}}" required>
         {!! $errors->first('number', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
@@ -32,7 +32,7 @@
 </div><div class="form-group {{ $errors->has('price') ? 'has-error' : ''}}">
     <label for="price" class="col-md-4 control-label">{{ 'Price' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="price" type="text" id="price" value="{{ $menu->price or ''}}" required>
+        <input class="form-control" type="number" step="any" name="price" type="text" id="price" value="{{ $menu->price or ''}}" required>
         {!! $errors->first('price', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('status') ? 'has-error' : ''}}">

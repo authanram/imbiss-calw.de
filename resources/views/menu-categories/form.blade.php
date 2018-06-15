@@ -7,7 +7,7 @@
 </div><div class="form-group {{ $errors->has('order') ? 'has-error' : ''}}">
     <label for="order" class="col-md-4 control-label">{{ 'Order' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="order" type="number" id="order" value="{{ $menucategory->order or ''}}" required>
+        <input class="form-control" type="number" name="order" type="number" id="order" value="{{ $menucategory->order or ''}}" required>
         {!! $errors->first('order', '<p class="help-block">:message</p>') !!}
     </div>
 </div><div class="form-group {{ $errors->has('status') ? 'has-error' : ''}}">

@@ -22,9 +22,9 @@
                     @foreach($menuCategories as $category)
                         @if($category->status)
                             @if(request()->route()->parameter('menu') === urlencode(strtolower($category->name)))
-                                <a href="/#{{ urlencode(strtolower(htmlentities($category->name))) }}" class="list-group-item-action border-0 active">
+                                <a href="/#{{ urlencode(strtolower(htmlentities($category->name))) }}" class="list-group-item-action pl-2 p-1 border-0 active">
                             @else
-                                <a href="/#{{ urlencode(strtolower(htmlentities($category->name))) }}" class="list-group-item-action border-0">
+                                <a href="/#{{ urlencode(strtolower(htmlentities($category->name))) }}" class="list-group-item-action pl-2 p-1 border-0">
                             @endif
                                 <span class="d-block lead p-0 m-0" style="line-height:1.2rem;">{{ $category->name }}</span>
                                 <small class="text-muted">

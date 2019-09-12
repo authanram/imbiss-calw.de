@@ -13,6 +13,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        try {
+            \DB::connection()->getPdo();
+        } catch (\Exception $e) {
+            abort(503, 'Could not connect to the database.');
+        }
+
         \Schema::defaultStringLength(191);
         $menuCategories = \App\MenuCategory::all();
         view()->share('menuCategories', $menuCategories);
@@ -25,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->environment() == 'local') {
+        if ($this->app->environment() === 'local') {
             $this->app->register('Appzcoder\CrudGenerator\CrudGeneratorServiceProvider');
         }
     }

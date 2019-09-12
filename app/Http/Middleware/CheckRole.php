@@ -11,7 +11,7 @@ class CheckRole
      * @param Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next): void
+    public function handle($request, Closure $next)
     {
         $roles = $this->getRequiredRoleForRoute($request->route());
         if ($request->user()->hasRole($roles) || !$roles) {

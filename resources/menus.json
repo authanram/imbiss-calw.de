@@ -1,0 +1,41 @@
+{
+  "menus": [
+    {
+      "section": "Menu",
+      "role": "editor",
+      "items": [
+        {
+          "title": "Categories",
+          "url": "\/menu-categories",
+          "role": "editor"
+        },
+        {
+          "title": "Menus",
+          "url": "\/menus",
+          "role": "editor"
+        }
+      ]
+    },
+    {
+      "section": "User, Roles & Permissions",
+      "role": "admin",
+      "items": [
+        {
+          "title": "Users",
+          "url": "\/admin\/users",
+          "role": "admin"
+        },
+        {
+          "title": "Roles",
+          "url": "\/admin\/roles",
+          "role": "admin"
+        },
+        {
+          "title": "Permissions",
+          "url": "\/admin\/permissions",
+          "role": "admin"
+        }
+      ]
+    }
+  ]
+}

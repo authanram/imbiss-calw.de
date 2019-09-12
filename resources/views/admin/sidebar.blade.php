@@ -1,6 +1,6 @@
 <div class="col-md-3">
-    @foreach($laravelAdminMenus->menus as $section)
-        @if($section->items && (!empty($section->role) && request()->user()->hasRole($section->role)) || empty($section->role))
+    @foreach($adminMenus->menus as $section)
+        @if(($section->items && (!empty($section->role) && request()->user()->hasRole($section->role))) || empty($section->role))
             <div class="card">
                 <div class="card-header">
                     {{ $section->section }}

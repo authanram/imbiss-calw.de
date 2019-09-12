@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -18,11 +20,17 @@ class AppServiceProvider extends ServiceProvider
         }
 
         try {
-            \Schema::defaultStringLength(191);
+            Schema::defaultStringLength(191);
             $menuCategories = \App\MenuCategory::all();
             view()->share('menuCategories', $menuCategories);
         } catch (\Exception $e) {
-            abort(503, 'Could not connect to the database.');
+            echo 'Be right back...';
+            exit;
+        }
+
+        $file = base_path('resources/menus.json');
+        if (File::exists($file)) {
+            view()->share('adminMenus', json_decode(File::get($file)));
         }
     }
 
@@ -33,8 +41,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if ($this->app->environment() === 'local') {
-            $this->app->register('Appzcoder\CrudGenerator\CrudGeneratorServiceProvider');
-        }
+        //
     }
 }

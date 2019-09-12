@@ -6,7 +6,6 @@
     "type": "project",
     "require": {
         "php": "^7.2",
-        "appzcoder/laravel-admin": "dev-master#v3.1.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
@@ -14,7 +13,6 @@
         "laravelcollective/html": "6.0.*"
     },
     "require-dev": {
-        "appzcoder/crud-generator": "dev-master#v3.0.8",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",

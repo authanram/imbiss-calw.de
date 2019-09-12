@@ -56,13 +56,13 @@
     <div class="col d-inline-block">
 
         <div id="app">
-            <div class="content d-block text-left mt-3 pl-3">
+            <div class="content d-block text-left mt-3 pl-md-3">
 
                 <div class="mt-4">
 
                     <span class="float-left mr-4">
                         <a href="/" title="imbiss-calw.de">
-                            <img class="img-thumbnail mb-2" style="width:220px;" src="/images/head.png" />
+                            <img class="img-thumbnail mb-2" style="width:220px;" src="{{ asset('/images/head.png') }}" />
                         </a>
                     </span>
 
@@ -97,10 +97,6 @@
                 </div>
 
                 <hr />
-
-                <div class="mb-4 small float-left">
-                    <a class="muted d-inline-block mr-2" href="/">Startseite</a>
-                </div>
 
                 <div class="mb-4 small float-right">
                     <a class="muted d-inline-block mr-2" href="/impressum">Impressum</a>

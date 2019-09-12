@@ -56,16 +56,6 @@
         "sort-packages": true,
         "optimize-autoloader": true
     },
-    "repositories": {
-        "appzcoder/crud-generator": {
-            "type": "github",
-            "url": "https://github.com/authanram/crud-generator.git"
-        },
-        "appzcoder/laravel-admin": {
-            "type": "github",
-            "url": "https://github.com/authanram/laravel-admin.git"
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }

@@ -13,15 +13,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (PHP_SAPI === 'cli') {
+            return;
+        }
+
         try {
-            \DB::connection()->getPdo();
+            \Schema::defaultStringLength(191);
+            $menuCategories = \App\MenuCategory::all();
+            view()->share('menuCategories', $menuCategories);
         } catch (\Exception $e) {
             abort(503, 'Could not connect to the database.');
         }
-
-        \Schema::defaultStringLength(191);
-        $menuCategories = \App\MenuCategory::all();
-        view()->share('menuCategories', $menuCategories);
     }
 
     /**

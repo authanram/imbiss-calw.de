@@ -4,7 +4,10 @@ namespace App\Providers;
 
 use App\Permission;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Schema;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -14,40 +17,33 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        // 'App\Model' => 'App\Policies\ModelPolicy',
     ];
 
     /**
-     * Register any application authentication / authorization services.
-     *
-     * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
-     *
-     * @return void
+     * @param GateContract $gate
      */
     public function boot(GateContract $gate)
     {
-        parent::registerPolicies($gate);
+        $this->registerPolicies();
 
         try {
-            if (\Schema::hasTable('permissions')) {
-                // Dynamically register permissions with Laravel's Gate.
+            if (Schema::hasTable('permissions')) {
                 foreach ($this->getPermissions() as $permission) {
-                    $gate->define($permission->name, function ($user) use ($permission) {
+                    $gate->define($permission->name, static function ($user) use ($permission) {
                         return $user->hasPermission($permission);
                     });
                 }
             }
-        } catch (\Illuminate\Database\QueryException $ex) {
+        } catch (QueryException $e) {
             return;
         }
     }
 
     /**
-     * Fetch the collection of site permissions.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return Collection
      */
-    protected function getPermissions()
+    protected function getPermissions(): Collection
     {
         return Permission::with('roles')->get();
     }

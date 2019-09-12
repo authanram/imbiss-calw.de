@@ -7,19 +7,13 @@ use Closure;
 class CheckRole
 {
     /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     *
+     * @param $request
+     * @param Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next): void
     {
-        // Get the required roles from the route
         $roles = $this->getRequiredRoleForRoute($request->route());
-        // Check if a role is required for the route, and
-        // if so, ensure that the user has that role.
         if ($request->user()->hasRole($roles) || !$roles) {
             return $next($request);
         }
@@ -27,10 +21,14 @@ class CheckRole
         abort(404);
     }
 
+    /**
+     * @param $route
+     * @return mixed|null
+     */
     private function getRequiredRoleForRoute($route)
     {
         $actions = $route->getAction();
 
-        return isset($actions['roles']) ? $actions['roles'] : null;
+        return $actions['roles'] ?? null;
     }
 }

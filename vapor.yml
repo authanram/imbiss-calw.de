@@ -2,6 +2,7 @@ id: 1087
 name: imbiss-calw-de
 environments:
     production:
+        domain: imbiss-calw.de
         database: a00001
         memory: 1024
         cli-memory: 512

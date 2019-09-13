@@ -1,10 +1,12 @@
 # imbiss-calw.de
 
-What you will see on imbiss-calw.de
+What you will see on [imbiss-calw.de](http://imbiss-calw.de)
 
 ## Note
 
 Feel free to contribute or use the code the way you want. There are no limitations from my side.
+
+Made with :heart: and [Laravel](https://laravel.com)
 
 ## Warranty / Usage
 

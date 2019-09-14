@@ -4,7 +4,7 @@ What you will see on [imbiss-calw.de](http://imbiss-calw.de)
 
 ## Note
 
-Feel free to contribute or use the code the way you want. There are no limitations from my side.
+Feel free to contribute or to use this code any way you want. There are no limitations from my side.
 
 Made with :heart: and [Laravel](https://laravel.com)
 

@@ -1,22 +1,24 @@
 id: 1087
 name: imbiss-calw-de
 environments:
-    production:
-        domain: imbiss-calw.de
-        database: a00001
-        memory: 1024
-        cli-memory: 512
-        queues: []
-        build:
-            - 'composer install --no-dev --classmap-authoritative'
-            - 'php artisan event:cache'
-            - 'npm install && npm run prod && rm -rf node_modules'
-    staging:
-        database: a00001
-        memory: 1024
-        cli-memory: 512
-        queues: []
-        build:
-            - 'composer install --classmap-authoritative'
-            - 'php artisan event:cache'
-            - 'npm install && npm run dev && rm -rf node_modules'
+  production:
+    domain: imbiss-calw.de
+    runtime: php-7.4
+    database: a00001
+    memory: 1024
+    cli-memory: 512
+    queues: []
+    build:
+      - 'composer install --no-dev --classmap-authoritative'
+      - 'php artisan event:cache'
+      - 'npm install && npm run prod && rm -rf node_modules'
+  staging:
+    runtime: php-7.4
+    database: a00001
+    memory: 1024
+    cli-memory: 512
+    queues: []
+    build:
+      - 'composer install --classmap-authoritative'
+      - 'php artisan event:cache'
+      - 'npm install && npm run dev && rm -rf node_modules'

@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
             $menuCategories = \App\MenuCategory::all();
             view()->share('menuCategories', $menuCategories);
         } catch (\Exception $e) {
-            echo 'Be right back... ' . $e->getMessage();
+            echo 'Be right back...';
             exit;
         }
 

@@ -1,5 +1,6 @@
 id: 1087
 name: imbiss-calw-de
+separate-vendor: true
 environments:
   production:
     domain: imbiss-calw.de

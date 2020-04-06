@@ -34,13 +34,13 @@ class AppServiceProvider extends ServiceProvider
             $menuCategories = \App\MenuCategory::all();
             view()->share('menuCategories', $menuCategories);
         } catch (\Exception $e) {
-            echo 'Be right back...';
+            echo 'Be right back... ' . $e->getMessage();
             exit;
         }
 
         $file = base_path('resources/menus.json');
         if (File::exists($file)) {
-            view()->share('adminMenus', json_decode(File::get($file)));
+            view()->share('adminMenus', json_decode(File::get($file), false));
         }
     }
 }

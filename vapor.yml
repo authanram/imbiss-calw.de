@@ -8,7 +8,9 @@ environments:
     database: a00001
     memory: 1024
     cli-memory: 512
+    mail: false
     queues: []
+    scheduler: false
     build:
       - 'composer install --no-dev --classmap-authoritative'
       - 'php artisan event:cache'
@@ -18,6 +20,8 @@ environments:
     database: a00001
     memory: 1024
     cli-memory: 512
+    mail: false
+    scheduler: false
     queues: []
     build:
       - 'composer install --classmap-authoritative'

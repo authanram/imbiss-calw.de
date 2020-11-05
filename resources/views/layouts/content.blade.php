@@ -74,9 +74,9 @@
                             <span>Lange Steige 6, 75365 Calw</span>
                             (<a href="https://goo.gl/maps/UiqyqCqvLXo" target="_blank">Anfahrt</a>)
                             <br />
-                            <span class="lead">Montag - Sonntag</span> 11:00-14:30, 17:00-23:00 Uhr
+                            <span class="lead">Montag - Sonntag</span> 11:00-14:30, 17:00-22:00 Uhr
                             <br />
-                            <span class="lead">Samstag</span> 17:00 - 23:00 Uhr
+                            <span class="lead">Samstag</span> geschlossen
                         </span>
                     </span>
 

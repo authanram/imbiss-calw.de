@@ -1,19 +1,19 @@
 <div class="form-group{{ $errors->has('name') ? ' has-error' : ''}}">
-    {!! Form::label('name', 'Name: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="name" class="col-md-4 control-label">Name: </label>
     <div class="col-md-6">
-        {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        <input class="form-control" name="name" type="text" id="name" value="{{ old('name', $permission->name ?? '') }}" required>
         {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group{{ $errors->has('label') ? ' has-error' : ''}}">
-    {!! Form::label('label', 'Label: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="label" class="col-md-4 control-label">Label: </label>
     <div class="col-md-6">
-        {!! Form::text('label', null, ['class' => 'form-control']) !!}
+        <input class="form-control" name="label" type="text" id="label" value="{{ old('label', $permission->label ?? '') }}">
         {!! $errors->first('label', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group">
     <div class="col-md-offset-4 col-md-4">
-        {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Create', ['class' => 'btn btn-primary']) !!}
+        <input class="btn btn-primary" type="submit" value="{{ $submitButtonText ?? 'Create' }}">
     </div>
 </div>

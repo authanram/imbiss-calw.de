@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Menu;
+use App\Models\Menu;
+use App\Models\MenuCategory;
 use Illuminate\Http\Request;
 
 class MenusController extends Controller
@@ -32,7 +33,7 @@ class MenusController extends Controller
             $menus = Menu::paginate($perPage);
         }
 
-        $menucategories = \App\MenuCategory::all();
+        $menucategories = MenuCategory::all();
 
         return view('menus.index', compact('menus', 'menucategories'));
     }
@@ -44,7 +45,7 @@ class MenusController extends Controller
      */
     public function create()
     {
-        $menucategories = \App\MenuCategory::all();
+        $menucategories = MenuCategory::all();
 
         return view('menus.create', compact('menucategories'));
     }
@@ -96,7 +97,7 @@ class MenusController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
-        $menucategories = \App\MenuCategory::all();
+        $menucategories = MenuCategory::all();
 
 
         return view('menus.edit', compact('menu', 'menucategories'));

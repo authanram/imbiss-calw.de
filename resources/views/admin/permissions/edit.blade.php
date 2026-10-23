@@ -21,15 +21,13 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($permission, [
-                            'method' => 'PATCH',
-                            'url' => ['/admin/permissions', $permission->id],
-                            'class' => 'form-horizontal'
-                        ]) !!}
+                        <form method="POST" action="{{ url('/admin/permissions/' . $permission->id) }}" accept-charset="UTF-8" class="form-horizontal">
+                            @method('PATCH')
+                            @csrf
 
                         @include ('admin.permissions.form', ['submitButtonText' => 'Update'])
 
-                        {!! Form::close() !!}
+                        </form>
 
                     </div>
                 </div>

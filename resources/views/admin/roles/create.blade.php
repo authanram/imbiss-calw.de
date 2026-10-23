@@ -21,11 +21,12 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/admin/roles', 'class' => 'form-horizontal']) !!}
+                        <form method="POST" action="{{ url('/admin/roles') }}" accept-charset="UTF-8" class="form-horizontal">
+                            @csrf
 
                         @include ('admin.roles.form')
 
-                        {!! Form::close() !!}
+                        </form>
 
                     </div>
                 </div>

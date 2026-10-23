@@ -21,15 +21,13 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($role, [
-                            'method' => 'PATCH',
-                            'url' => ['/admin/roles', $role->id],
-                            'class' => 'form-horizontal'
-                        ]) !!}
+                        <form method="POST" action="{{ url('/admin/roles/' . $role->id) }}" accept-charset="UTF-8" class="form-horizontal">
+                            @method('PATCH')
+                            @csrf
 
                         @include ('admin.roles.form', ['submitButtonText' => 'Update'])
 
-                        {!! Form::close() !!}
+                        </form>
 
                     </div>
                 </div>

@@ -1,26 +1,31 @@
 <div class="form-group{{ $errors->has('name') ? ' has-error' : ''}}">
-    {!! Form::label('name', 'Name: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="name" class="col-md-4 control-label">Name: </label>
     <div class="col-md-6">
-        {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        <input class="form-control" name="name" type="text" id="name" value="{{ old('name', $role->name ?? '') }}" required>
         {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group{{ $errors->has('label') ? ' has-error' : ''}}">
-    {!! Form::label('label', 'Label: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="label" class="col-md-4 control-label">Label: </label>
     <div class="col-md-6">
-        {!! Form::text('label', null, ['class' => 'form-control']) !!}
+        <input class="form-control" name="label" type="text" id="label" value="{{ old('label', $role->label ?? '') }}">
         {!! $errors->first('label', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group{{ $errors->has('label') ? ' has-error' : ''}}">
-    {!! Form::label('label', 'Permissions: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="permissions" class="col-md-4 control-label">Permissions: </label>
     <div class="col-md-6">
-        {!! Form::select('permissions[]', $permissions, isset($role) ? $role->permissions->pluck('name') : [], ['class' => 'form-control', 'multiple' => true]) !!}
+        @php($selectedPermissions = old('permissions', isset($role) ? $role->permissions->pluck('name')->all() : []))
+        <select class="form-control" name="permissions[]" id="permissions" multiple>
+            @foreach ($permissions as $name => $label)
+                <option value="{{ $name }}" @selected(in_array($name, $selectedPermissions))>{{ $label }}</option>
+            @endforeach
+        </select>
         {!! $errors->first('label', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group">
     <div class="col-md-offset-4 col-md-4">
-        {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Create', ['class' => 'btn btn-primary']) !!}
+        <input class="btn btn-primary" type="submit" value="{{ $submitButtonText ?? 'Create' }}">
     </div>
 </div>

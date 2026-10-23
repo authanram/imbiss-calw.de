@@ -1,8 +1,15 @@
 <?php
 
-use App\MenuCategory;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PermissionsController;
+use App\Http\Controllers\Admin\RolesController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MenuCategoriesController;
+use App\Http\Controllers\MenusController;
+use App\Models\MenuCategory;
 
-//Auth::routes();
+// Auth::routes();
 
 Route::get('/', function () {
     return view('menu', [
@@ -24,19 +31,19 @@ Route::get('/haftungsausschluss', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')
+Route::get('/home', [HomeController::class, 'index'])
     ->name('home');
 
 Route::group(['middleware' => ['auth', 'roles'], 'roles' => 'admin'], function () {
-    Route::resource('admin/roles', 'Admin\RolesController');
-    Route::resource('admin/permissions', 'Admin\PermissionsController');
-    Route::resource('admin/users', 'Admin\UsersController');
+    Route::resource('admin/roles', RolesController::class);
+    Route::resource('admin/permissions', PermissionsController::class);
+    Route::resource('admin/users', UsersController::class);
 });
 
 Route::group(['middleware' => ['auth', 'roles'], 'roles' => 'editor'], function () {
-    Route::get('admin', 'Admin\AdminController@index');
-    Route::resource('menu-categories', 'MenuCategoriesController');
-    Route::resource('menus', 'MenusController');
+    Route::get('admin', [AdminController::class, 'index']);
+    Route::resource('menu-categories', MenuCategoriesController::class);
+    Route::resource('menus', MenusController::class);
 });
 
 Route::get('/foobar', function () {

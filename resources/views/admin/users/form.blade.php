@@ -1,32 +1,37 @@
 <div class="form-group{{ $errors->has('name') ? ' has-error' : ''}}">
-    {!! Form::label('name', 'Name: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="name" class="col-md-4 control-label">Name: </label>
     <div class="col-md-6">
-        {!! Form::text('name', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        <input class="form-control" name="name" type="text" id="name" value="{{ old('name', $user->name ?? '') }}" required>
         {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group{{ $errors->has('email') ? ' has-error' : ''}}">
-    {!! Form::label('email', 'Email: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="email" class="col-md-4 control-label">Email: </label>
     <div class="col-md-6">
-        {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required']) !!}
+        <input class="form-control" name="email" type="email" id="email" value="{{ old('email', $user->email ?? '') }}" required>
         {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group{{ $errors->has('password') ? ' has-error' : ''}}">
-    {!! Form::label('password', 'Password: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="password" class="col-md-4 control-label">Password: </label>
     <div class="col-md-6">
-        {!! Form::password('password', ['class' => 'form-control', 'required' => 'required']) !!}
+        <input class="form-control" name="password" type="password" id="password" required>
         {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group{{ $errors->has('roles') ? ' has-error' : ''}}">
-    {!! Form::label('role', 'Role: ', ['class' => 'col-md-4 control-label']) !!}
+    <label for="roles" class="col-md-4 control-label">Role: </label>
     <div class="col-md-6">
-        {!! Form::select('roles[]', $roles, isset($user_roles) ? $user_roles : [], ['class' => 'form-control', 'multiple' => true]) !!}
+        @php($selectedRoles = old('roles', $user_roles ?? []))
+        <select class="form-control" name="roles[]" id="roles" multiple>
+            @foreach ($roles as $name => $label)
+                <option value="{{ $name }}" @selected(in_array($name, $selectedRoles))>{{ $label }}</option>
+            @endforeach
+        </select>
     </div>
 </div>
 <div class="form-group">
     <div class="col-md-offset-4 col-md-4">
-        {!! Form::submit(isset($submitButtonText) ? $submitButtonText : 'Create', ['class' => 'btn btn-primary']) !!}
+        <input class="btn btn-primary" type="submit" value="{{ $submitButtonText ?? 'Create' }}">
     </div>
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -31,6 +31,6 @@ class Menu extends Model
 
     public function menuCategory()
     {
-        return $this->belongsTo('App\MenuCategory');
+        return $this->belongsTo(MenuCategory::class);
     }
 }

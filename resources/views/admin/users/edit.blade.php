@@ -21,15 +21,13 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($user, [
-                            'method' => 'PATCH',
-                            'url' => ['/admin/users', $user->id],
-                            'class' => 'form-horizontal'
-                        ]) !!}
+                        <form method="POST" action="{{ url('/admin/users/' . $user->id) }}" accept-charset="UTF-8" class="form-horizontal">
+                            @method('PATCH')
+                            @csrf
 
                         @include ('admin.users.form', ['submitButtonText' => 'Update'])
 
-                        {!! Form::close() !!}
+                        </form>
 
                     </div>
                 </div>

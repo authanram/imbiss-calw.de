@@ -45,7 +45,3 @@ Route::group(['middleware' => ['auth', 'roles'], 'roles' => 'editor'], function 
     Route::resource('menu-categories', MenuCategoriesController::class);
     Route::resource('menus', MenusController::class);
 });
-
-Route::get('/foobar', function () {
-    return 'Foobar!!1^';
-})->name('imprint');

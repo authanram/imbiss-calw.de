@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\MenuCategory;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Tests\TestCase;
 
@@ -38,5 +39,13 @@ class ExampleTest extends TestCase
         $user = User::factory()->create();
 
         $this->actingAs($user)->get('/login')->assertRedirect('/home');
+    }
+
+    public function test_route_names_are_unique_so_routes_can_be_cached()
+    {
+        $names = collect(Route::getRoutes()->getRoutes())->map->getName()->filter();
+
+        $this->assertSame([], $names->duplicates()->values()->all());
+        $this->assertSame(url('/impressum'), route('imprint'));
     }
 }
